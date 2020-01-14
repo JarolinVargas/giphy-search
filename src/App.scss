@@ -1,0 +1,17 @@
+body {
+  background-color: #F7F7F9;
+  height: 100vh;
+}
+
+#search-layout {
+  width: 740px;
+  height: 200px;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
