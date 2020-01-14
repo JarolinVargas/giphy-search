@@ -1,8 +1,10 @@
 import React from 'react';
 import './SearchInput.scss';
 
-export default function SearchInput() {
+export default function SearchOutput() {
     return (
-        <input id="search-input" type="text" placeholder="Search all the GIFs and stickers "/>
+        <div>
+
+        </div>
     )
 }
