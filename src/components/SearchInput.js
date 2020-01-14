@@ -15,7 +15,15 @@ const variants = {
 }
 
 export default function SearchInput(props) {
+    // search and show results when 'enter' key is pressed
+    const keyPress = (event) => {
+        if(event.key === 'Enter') {
+            props.search(event.currentTarget.value);
+            props.showResultsHandle();
+        }
+    }
+
     return (
-        <motion.input id="search-input" type="text" onFocus={props.showResultsHandle} placeholder="Search all the GIFs and stickers" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
+        <motion.input id="search-input" type="text" onKeyPress={keyPress} placeholder="Search all the GIFs and stickers" initial="initial" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
     )
 }

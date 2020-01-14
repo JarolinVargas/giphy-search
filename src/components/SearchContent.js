@@ -7,13 +7,15 @@ import SearchOutput from './SearchOutput';
 const variants = {
     normal: {
         width: 740,
+        height: '100%',
         borderRadius: 60,
         backgroundColor: 'rgb(255, 255, 255)',
         paddingLeft: 30,
         paddingRight: 30
     },
-    shrink: { // rename
+    showResults: {
         width: '100vw',
+        height: 'calc(100vh - 100px)',
         borderRadius: 0,
         backgroundColor: 'rgb(17, 17, 17)'
     }
@@ -21,8 +23,9 @@ const variants = {
 
 export default function SearchContent(props) {
     return (
-        <motion.main id="search-content-container" animate={!props.showResults ? 'normal' : 'shrink'} variants={variants}>
-            <SearchInput showResults={props.showResults} showResultsHandle={props.showResultsHandle}></SearchInput>
+        <motion.main id="search-content-container" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}>
+            <SearchInput search={props.search} showResults={props.showResults} showResultsHandle={props.showResultsHandle}></SearchInput>
+            <SearchOutput searchResults={props.searchResults} showResults={props.showResults}></SearchOutput>
         </motion.main>
     )
 }
