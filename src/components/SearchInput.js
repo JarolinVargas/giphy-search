@@ -24,6 +24,6 @@ export default function SearchInput(props) {
     }
 
     return (
-        <motion.input id="search-input" type="text" onKeyPress={keyPress} placeholder="Search all the GIFs and stickers" initial="initial" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
+        <motion.input id="search-input" type="text" onKeyPress={keyPress} placeholder="Search all the GIFs" initial="initial" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
     )
 }
