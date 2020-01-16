@@ -19,11 +19,10 @@ export default function SearchInput(props) {
     const keyPress = (event) => {
         if(event.key === 'Enter') {
             props.search(event.currentTarget.value);
-            props.showResultsHandle();
         }
     }
 
     return (
-        <motion.input id="search-input" type="text" onKeyPress={keyPress} placeholder="Search all the GIFs" initial="initial" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
+        <motion.input id="search-input" type="text" onKeyPress={keyPress} placeholder="Search all the GIFs" animate={!props.showResults ? 'normal' : 'showResults'} variants={variants}/>
     )
 }

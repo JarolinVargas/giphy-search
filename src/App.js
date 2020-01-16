@@ -15,7 +15,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.search = this.search.bind(this);
-    this.showResults = this.showResults.bind(this);
     this.state = {
       searchResults: [],
       searchStatus: null,
@@ -28,19 +27,14 @@ class App extends React.Component {
     axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ipEefKND6Vj4oWvrgc5ZR9Tf9ELXuDma&q=${encodeURI(searchTerm)}&limit=30`).then((response) => {
       this.setState({
         searchResults: response.data.data,
-        searchStatus: response.data.data.length === 0 ? 'No Results' : null
+        searchStatus: response.data.data.length === 0 ? 'No Results' : null,
+        showResults: true
       })
     }).catch((error) => {
       this.setState({
-        searchStatus: error.toString()
+        searchStatus: error.toString(),
+        showResults: true
       })
-    })
-  }
-
-  // expand results container when input is submitted
-  showResults() {
-    this.setState({
-      showResults: true
     })
   }
   
@@ -51,7 +45,7 @@ class App extends React.Component {
           <Logo showResults={this.state.showResults}/>
         </div>
         <div id="content">
-          <SearchContent search={this.search} searchResults={this.state.searchResults} showResults={this.state.showResults} showResultsHandle={this.showResults} searchStatus={this.state.searchStatus}/>
+          <SearchContent search={this.search} searchResults={this.state.searchResults} showResults={this.state.showResults} searchStatus={this.state.searchStatus}/>
         </div>
       </motion.div>
     );
