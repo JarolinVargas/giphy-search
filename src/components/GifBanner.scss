@@ -5,11 +5,32 @@
     background-color: #000;
     text-align: center;
     overflow: hidden;
+    position: relative;
 
     img {
         font-size: 0;
         vertical-align: top;
         width: 100%;
         max-width: 100%;
+    }
+
+    &.img-loading {
+        min-height: 300px;
+        
+        &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 1;
+            background-image: url('../assets/spinner.svg');
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
     }
 }

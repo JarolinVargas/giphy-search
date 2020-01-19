@@ -8,8 +8,8 @@ const variants = {
     },
     showResults: {
         height: 70,
-        color: 'rgb(255, 255, 255, 1)',
-        borderBottom: 'solid 1px rgb(255, 255, 255, 0.3)',
+        color: 'rgba(255, 255, 255, 1)',
+        borderBottom: 'solid 1px rgba(255, 255, 255, 0.3)',
         textAlign: 'left'
     }
 }

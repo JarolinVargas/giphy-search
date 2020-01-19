@@ -18,13 +18,20 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       searchStatus: null,
-      showResults: false
+      showResults: false,
     }
   }
 
   // perform api request
   search(searchTerm) {
-    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ipEefKND6Vj4oWvrgc5ZR9Tf9ELXuDma&q=${encodeURI(searchTerm)}&limit=30`).then((response) => {
+    this.setState({searchResults: []}); // clear previous search results
+    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ipEefKND6Vj4oWvrgc5ZR9Tf9ELXuDma`, {
+      params: {
+        q: encodeURI(searchTerm),
+        limit: 30,
+        offset: 0
+      }
+    }).then((response) => {
       this.setState({
         searchResults: response.data.data,
         searchStatus: response.data.data.length === 0 ? 'No Results' : null,
