@@ -19,6 +19,6 @@ const variants = {
 
 export default function Logo(props) {
     return (
-        <motion.img id="logo" src={logoSVG} alt="Giphy" animate={!props.showResults ? 'normal' : 'shrink'} variants={variants}/>
+        <motion.img className="logo" src={logoSVG} alt="Giphy" animate={!props.showResults ? 'normal' : 'shrink'} variants={variants}/>
     )
 }

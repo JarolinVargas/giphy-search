@@ -18,7 +18,7 @@ export default function SearchOutput(props) {
 
     // toggle between display 'grid' and 'block' styles to avoid showing message as part of grid item.
     return (
-        <div id="search-output-container" style={!props.showResults ? {display:'none'} : {display: !invalidResults ? 'grid' : 'block'}}>
+        <div className="search-output-container" style={!props.showResults ? {display:'none'} : {display: !invalidResults ? 'grid' : 'block'}}>
             {invalidResults ? <Notice message={props.searchStatus}></Notice> : searchResultsItems}
         </div>
     )

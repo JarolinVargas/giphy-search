@@ -1,4 +1,4 @@
-#search-layout {
+.search-layout {
   width: 100vw;
   height: 180px;
   position: fixed;
@@ -11,12 +11,22 @@
   flex-direction: column;
 }
 
-#content {
+.content {
   height: 100%;
 }
 
-#header {
+.header {
   flex-basis: 100px;
   flex-shrink: 0;
   position: relative;
+}
+
+// Media queries
+@import './responsive-mixins.scss';
+@media screen and (max-width: 800px) {
+  @include searchOutput-BP1;
+}
+
+@media screen and (max-width: 500px) {
+  @include searchOutput-BP2;
 }

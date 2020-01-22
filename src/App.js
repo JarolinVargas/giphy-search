@@ -18,12 +18,12 @@ class App extends React.Component {
     this.state = {
       searchResults: [],
       searchStatus: null,
-      showResults: false,
+      showResults: false
     }
   }
 
   // perform api request
-  search(searchTerm) {
+  search = (searchTerm) => {
     this.setState({searchResults: []}); // clear previous search results
     axios.get(`https://api.giphy.com/v1/gifs/search?api_key=ipEefKND6Vj4oWvrgc5ZR9Tf9ELXuDma`, {
       params: {
@@ -47,11 +47,11 @@ class App extends React.Component {
   
   render() {
     return (
-      <motion.div id="search-layout" animate={!this.state.showResults ? 'normal' : 'showResults'} variants={variants}>
-        <div id="header">
+      <motion.div className="search-layout" animate={!this.state.showResults ? 'normal' : 'showResults'} variants={variants}>
+        <div className="header">
           <Logo showResults={this.state.showResults}/>
         </div>
-        <div id="content">
+        <div className="content">
           <SearchContent search={this.search} searchResults={this.state.searchResults} showResults={this.state.showResults} searchStatus={this.state.searchStatus}/>
         </div>
       </motion.div>

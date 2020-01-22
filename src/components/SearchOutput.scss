@@ -1,4 +1,4 @@
-#search-output-container {
+.search-output-container {
     width: 100%;
     flex-grow: 1;
     display: grid;
@@ -7,17 +7,4 @@
     padding-top: 30px;
     display: none;
     overflow: scroll;
-}
-
-// Media queries
-@media screen and (max-width: 800px) {
-    #search-output-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #search-output-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
